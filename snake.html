@@ -37,11 +37,12 @@
   }
 
   #score-bar {
-    color: #4a9e4a;
-    font-size: 13px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
     text-align: center;
-    margin-bottom: 4px;
-    letter-spacing: 2px;
+    margin-bottom: 6px;
+    letter-spacing: 3px;
   }
 
   canvas {
@@ -97,7 +98,7 @@
 <div id="phone">
   <div id="screen-bezel">
     <div id="score-bar">SCORE: <span id="score">0</span> &nbsp; HI: <span id="hi">0</span></div>
-    <canvas id="canvas" width="560" height="560"></canvas>
+    <canvas id="canvas" width="720" height="400"></canvas>
     <div id="message">Press OK to start</div>
   </div>
 
@@ -117,7 +118,7 @@ const scoreEl = document.getElementById('score');
 const hiEl    = document.getElementById('hi');
 const msgEl   = document.getElementById('message');
 
-const COLS = 28, ROWS = 28, CELL = 20;
+const COLS = 36, ROWS = 20, CELL = 20;
 const COLORS = {
   bg:    '#8bac0f',
   grid:  '#9bbc0f',
@@ -131,7 +132,7 @@ let hiScore = parseInt(localStorage.getItem('snakeHi') || '0');
 hiEl.textContent = hiScore;
 
 function init() {
-  snake = [{x:14, y:14}, {x:13, y:14}, {x:12, y:14}];
+  snake = [{x:18, y:10}, {x:17, y:10}, {x:16, y:10}];
   dir = {x:1, y:0};
   nextDir = {x:1, y:0};
   score = 0;
