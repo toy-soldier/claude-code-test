@@ -126,7 +126,9 @@ const COLORS = {
   food:  '#0f380f',
 };
 
-let snake, dir, nextDir, food, score, hiScore = 0, loop, running = false;
+let snake, dir, nextDir, food, score, loop, running = false;
+let hiScore = parseInt(localStorage.getItem('snakeHi') || '0');
+hiEl.textContent = hiScore;
 
 function init() {
   snake = [{x:14, y:14}, {x:13, y:14}, {x:12, y:14}];
@@ -164,7 +166,7 @@ function step() {
   if (head.x===food.x && head.y===food.y) {
     score++;
     scoreEl.textContent = score;
-    if (score > hiScore) { hiScore = score; hiEl.textContent = hiScore; }
+    if (score > hiScore) { hiScore = score; hiEl.textContent = hiScore; localStorage.setItem('snakeHi', hiScore); }
     placeFood();
   } else {
     snake.pop();
