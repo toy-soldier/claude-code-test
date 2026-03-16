@@ -8,7 +8,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    background: #1a1a1a;
+    background: #1a3a6e;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,7 +97,7 @@
 <div id="phone">
   <div id="screen-bezel">
     <div id="score-bar">SCORE: <span id="score">0</span> &nbsp; HI: <span id="hi">0</span></div>
-    <canvas id="canvas" width="360" height="360"></canvas>
+    <canvas id="canvas" width="560" height="560"></canvas>
     <div id="message">Press OK to start</div>
   </div>
 
@@ -117,7 +117,7 @@ const scoreEl = document.getElementById('score');
 const hiEl    = document.getElementById('hi');
 const msgEl   = document.getElementById('message');
 
-const COLS = 20, ROWS = 20, CELL = 18;
+const COLS = 28, ROWS = 28, CELL = 20;
 const COLORS = {
   bg:    '#8bac0f',
   grid:  '#9bbc0f',
@@ -129,7 +129,7 @@ const COLORS = {
 let snake, dir, nextDir, food, score, hiScore = 0, loop, running = false;
 
 function init() {
-  snake = [{x:10, y:10}, {x:9, y:10}, {x:8, y:10}];
+  snake = [{x:14, y:14}, {x:13, y:14}, {x:12, y:14}];
   dir = {x:1, y:0};
   nextDir = {x:1, y:0};
   score = 0;
